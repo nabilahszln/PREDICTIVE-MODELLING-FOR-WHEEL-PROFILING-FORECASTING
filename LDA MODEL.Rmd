@@ -1,0 +1,69 @@
+---
+title: "LDA MODEL"
+output: html_notebook
+---
+
+
+```{r}
+library(readr)     # for reading CSV
+library(MASS)      # for lda()
+library(ggplot2)   # for visualization
+```
+
+
+
+```{r}
+file.choose()
+```
+
+
+```{r}
+# Read the CSV file
+data <- read_csv("C:\\Users\\SuzLiz\\OneDrive\\SEM 6\\DSP 2\\GP PROJ\\wheelmtbf.csv")
+data
+```
+
+
+
+```{r}
+# Convert 'Failure' to a factor (for classification)
+data$Failure <- as.factor(data$Failure)
+```
+
+
+
+```{r}
+# Fit the Linear Discriminant Analysis model
+lda_model <- lda(Failure ~ WheelDiameter + WheelFlange, data = data)
+```
+
+
+```{r}
+# Display LDA summary
+print(lda_model)
+```
+
+```{r}
+# Make predictions using the LDA model
+lda_pred <- predict(lda_model)
+```
+
+
+```{r}
+# Add predicted class to the cleaned dataset
+data$Predicted <- lda_pred$class
+```
+
+
+```{r}
+# Create scatter plot with classification results
+ggplot(data, aes(x = WheelDiameter, y = WheelFlange, color = Predicted, shape = Failure)) +
+  geom_point(size = 3) +
+  labs(title = "LDA Separation and Classification",
+       x = "Wheel Diameter", y = "Wheel Flange") +
+  theme_minimal()
+```
+
+
+
+
