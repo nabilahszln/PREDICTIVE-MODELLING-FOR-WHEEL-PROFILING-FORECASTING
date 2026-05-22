@@ -1,6 +1,6 @@
 📌 Project Overview:
 
-This project focuses on predictive maintenance for the MRT Kajang (KGL) Line by forecasting and predicting train wheel profiling and Mean Time Before Failure (MTBF) using deep learning and time-series forecasting models.
+This pair project focuses on predictive maintenance for the MRT Kajang (KGL) Line by forecasting and predicting train wheel profiling and Mean Time Before Failure (MTBF) using deep learning and time-series forecasting models.
 The project supports Malaysia’s New Industrial Master Plan 2030 (NIMP 2030), especially the mission of building a digitally vibrant nation through advanced analytics and AI-driven maintenance systems.
 
 🎯 Problem Statement:
